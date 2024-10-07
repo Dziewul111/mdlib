@@ -22,7 +22,7 @@ public:
         }
     }
 
-    T max(){
+    T min(){
         return que.front().first;
     }
 };
