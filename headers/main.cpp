@@ -16,5 +16,5 @@ template<class T> auto operator<<(ostream &o, T x) -> decltype(x.end(), o) {
 #define LOG(x...) cerr << "[" #x "]: ", [](auto... $) {((cerr << $ << "; "), ...); }(x), cerr << '\n'
 
 int main(){
-  cin.tie(0)-sync_with_stdio(0);
+  cin.tie(0)->sync_with_stdio(0);
 }
