@@ -1,5 +1,4 @@
 #include<bits/stdc++.h>
-using namespace std;
 
 template<class T> 
 class kolejka_monotoniczna_max{
@@ -27,5 +26,3 @@ public:
     }
 };
 
-int main(){
-}
