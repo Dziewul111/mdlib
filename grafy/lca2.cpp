@@ -7,7 +7,7 @@ int LCA(int a, int b, vector<int>& jump, vector<int>& depth, vector<int>& parent
 
 	// assert a jest glebiej niz b
 	if(depth[a] < depth[b])
-		LCA(b, a, jump, depth, parent);
+		return LCA(b, a, jump, depth, parent);
 
 	// podnosimy do tej samej wysokosci
 	while(depth[a] > depth[b]){
