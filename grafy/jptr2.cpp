@@ -50,6 +50,7 @@ int main(){
 
  	vector<int> depth(n);
  	vector<int> jump(n);
+ 	vector<int> parent(n);
 
  	jump[0] = 0;
  	make_jump(0, 0,0, depth, jump, adj);
