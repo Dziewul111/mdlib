@@ -15,7 +15,6 @@ template<class T> auto operator<<(ostream &o, T x) -> decltype(x.end(), o) {
 }
 #define LOG(x...) cerr << "[" #x "]: ", [](auto... $) {((cerr << $ << "; "), ...); }(x), cerr << '\n'
 
-const int maxn = 2 * 1e5;
 int n;
 
 void make_jump(int u, int p,int d, vector<int>& depth, vector<int>& jump, vector<vector<int>>& adj){
@@ -36,7 +35,6 @@ void make_jump(int u, int p,int d, vector<int>& depth, vector<int>& jump, vector
 int main(){
   cin.tie(0)->sync_with_stdio(0);
 
-  int q;
   cin >> n;
 
  	vector<vector<int>> adj(n - 1);
