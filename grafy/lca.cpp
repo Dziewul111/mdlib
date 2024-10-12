@@ -16,6 +16,9 @@ int lca(int a, int b, vector<int>& depth, vector<vector<int>>& jump){
 			a = jump[a][i];
 	}
 
+	if(a == b)
+		return a;
+
 	for(int i = l; i >= 0; i--){
 		if(jump[a][i] != jump[b][i]){
 			a = jump[a][i];
