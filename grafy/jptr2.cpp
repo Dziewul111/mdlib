@@ -4,6 +4,19 @@ using namespace std;   // Mateusz Dziewulski
 #define REP(i, n) for(int i = 0; i < (n); i++)
 int n;
 
+int go_up(int a, int d, vector<int>& jump, vector<int>& depth, vector<int>& parent){
+	int x = depth[a] - d;
+
+	while(depth[a] > x){
+		if(depth[jump[a]] >= x)
+			a = jump[a];
+		else
+			a = parent[a];
+	}
+
+	return a;
+}
+
 void make_jump(int u, int p,int d, vector<int>& depth, vector<int>& jump, vector<vector<int>>& adj){
 	depth[u] = d;
 
