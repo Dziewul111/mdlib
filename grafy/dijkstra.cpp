@@ -10,7 +10,7 @@ vector<int> dijkstra(vector<vector<pair<int, LL>>>& adj, int u){
 	int n = ssize(adj);
 
 	priority_queue<pair<LL, int>> q;
-	vector<int> ret(n, inf);
+	vector<int> odl(n, inf);
 	vector<bool> odw(n, 0);
 	q.push({0, u});
 
@@ -24,11 +24,11 @@ vector<int> dijkstra(vector<vector<pair<int, LL>>>& adj, int u){
 		odw[w] = 1;
 
 		for(auto i : adj[w]){
-			if(ret[i.st] > ret[w] + i.nd){
-				ret[i.st] = ret[w] + i.nd;
-				q.push({-ret[i.st], i.st});
+			if(odl[i.st] > odl[w] + i.nd){
+				odl[i.st] = odl[w] + i.nd;
+				q.push({-odl[i.st], i.st});
 			}
 		}
 	}
-	return ret;
+	return odl;
 }
