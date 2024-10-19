@@ -10,7 +10,7 @@ dla elementów ∈ [0, n)
 
 
 
-struct uinon_find{
+struct union_find{
 	vector<int> link;
 	vector<int> size;
 
