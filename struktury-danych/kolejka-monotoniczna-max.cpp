@@ -1,4 +1,5 @@
 #include<bits/stdc++.h>
+using namespace std;
 
 template<class T> 
 class kolejka_monotoniczna_max{
@@ -14,6 +15,7 @@ public:
     }
 
     void pop(){
+    	assert(!que.empty());
         if (que.front().second == 0) {
             que.pop_front();
         } else {
@@ -22,6 +24,7 @@ public:
     }
 
     T max(){
+    	assert(!que.empty());
         return que.front().first;
     }
 };

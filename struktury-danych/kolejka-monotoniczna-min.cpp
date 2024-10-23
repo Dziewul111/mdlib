@@ -14,6 +14,7 @@ public:
     }
 
     void pop(){
+    	assert(!que.empty());
         if (que.front().second == 0) {
             que.pop_front();
         } else {
@@ -22,7 +23,9 @@ public:
     }
 
     T min(){
+    	assert(!que.empty());
         return que.front().first;
     }
 };
+
 
