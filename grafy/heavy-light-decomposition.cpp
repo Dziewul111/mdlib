@@ -3,7 +3,7 @@ using namespace std;
 
 vector<int> path_end;
 vector<int> subtree_size;
-vector<int> preorder; // przydaje się np z drzewomi przedziałowymi
+vector<int> preorder; // przydaje się np z drzewami przedziałowymi
 
 int dfs(int u, int p, vector<vector<int>>& adj){
 	for(int i : adj[u])
