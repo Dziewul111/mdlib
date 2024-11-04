@@ -6,7 +6,7 @@ N='\033[0;m'
 
 for((i = 0;;i++));do
 	./gen > t.in 
-    ./brut < t.in > b.out 
+  	./brut < t.in > b.out 
 	./main < t.in > m.out
 
 	if diff -wq b.out m.out > /dev/null; then
