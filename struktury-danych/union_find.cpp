@@ -14,7 +14,7 @@ struct union_find{
 	vector<int> link;
 	vector<int> size;
 
-	uinon_find(int n){
+	union_find(int n){
 		link.resize(n);
 		size.resize(n, 1);
 
