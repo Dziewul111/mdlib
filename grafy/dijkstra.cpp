@@ -11,6 +11,7 @@ vector<int> dijkstra(vector<vector<pair<int, LL>>>& adj, int u){
 
 	priority_queue<pair<LL, int>> q;
 	vector<int> odl(n, inf);
+	odl[u] = 0;
 	vector<bool> odw(n, 0);
 	q.push({0, u});
 
