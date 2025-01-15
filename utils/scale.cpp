@@ -14,5 +14,4 @@ void skaluj(vector<int>& xd){
 		if(x != prev) idx++;
 		xd[i] = idx;
 		prev = x;
-	
 }
