@@ -1,15 +1,19 @@
 #include<bits/stdc++.h>
 using namespace std;
-typedef unsigned long long LL;
+typedef long long LL;
 typedef __int128 i128;
+
+LL llmul(LL a, LL b, LL mod){
+	return LL((i128) a * b % mod);
+}
 
 LL exp(LL a, LL b, LL mod) {
     LL res = 1;
     a %= mod;
     while (b > 0) {
         if (b & 1)
-            res = (i128)res * a % mod;
-        a = (i128)a * a % mod;
+            res = llmul(res, a, mod);
+        a = llmul(a, a, mod);
         b >>= 1;
     }
     return res;
@@ -20,7 +24,7 @@ bool iscomposite(LL n, LL s, LL a, LL d){
 	if(x == n - 1 || x == 1) return 0;
 
 	for(LL i = 1; i < s; i++){
-		x = (i128)x * x % n;
+		x = llmul(x, x, n);
 		if(x == n - 1) return 0;
 	}
 	return 1;
