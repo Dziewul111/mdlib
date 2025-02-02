@@ -1,9 +1,9 @@
 #include<bits/stdc++.h>
 #include"../struktury-danych/rmq.cpp"
 using namespace std;
-// LCA w O(1)
+// LCA w O(1) i inne przydatne rzeczy
 
-struct LCA_query{
+struct Tree_query{
 	struct Node{
 		int label, depth;
 
@@ -36,7 +36,15 @@ struct LCA_query{
 		return helper.query(st[a], st[b]).label;
 	}
 
-	LCA_query(vector<vector<int>>& v, int root = 0) : adj(v), n(sz(v)), st(vector<int>(n)){
+	int depth(int u){
+		return euler[st[u]].depth;
+	}
+
+	int distance(int u, int v){
+		return depth(u) + depth(v) - 2*depth(lca(u, v));
+	}
+
+	Tree_query(vector<vector<int>>& v, int root = 0) : adj(v), n(sz(v)), st(vector<int>(n)){
 		dfs(root, root, 0);
 		helper = RMQ(euler);
 	}
