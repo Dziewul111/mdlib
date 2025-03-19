@@ -11,7 +11,7 @@ LL LLmul(LL a, LL b, LL mod){
 LL rho(LL n){
 	if(n % 2 == 0) return 2;
 	for(int c = 1;; c++){
-		auto f = [&](LL x){return (LLmul(x, x, n) + c) % n;};
+		auto f = [&](LL x){return (mul(x, x, n) + c) % n;};
 
 		LL x = 2, y = f(x), p;
 
